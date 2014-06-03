@@ -3,13 +3,13 @@ Idea-App
 
 A Angular.js app with a bunch of good ideas
 
-## To use this, you need to install Node.js and Yeoman
+## You'll need to install Node.js and Yeoman
 
 http://nodejs.org/
 
 http://yeoman.io/
 
-## To intall the app dependencies
+## To intall the dependencies, run de folowing commands
 
         git clone https://github.com/evertonrobertoauler/Idea-App.git
         cd Idea-App
