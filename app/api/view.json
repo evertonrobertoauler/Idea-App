@@ -1,0 +1,67 @@
+{
+    "navbar": {
+        "type":"inverse",
+        "right": [{
+            "widget": "link",
+            "href": "#",
+            "description": "Link"
+        },{
+            "widget": "link",
+            "href": "#",
+            "description": "Link 2"
+        },{
+            "widget": "dropdown",
+            "description": "Dropdown",
+            "widgets": [{
+                "widget": "link",
+                "href": "#",
+                "description": "Link3"
+            },{
+                "widget": "divider"
+            },{
+                "widget": "link",
+                "href": "#",
+                "description": "Link 4"
+            }]
+        }]
+    },
+    "form" : {
+        "fields":[{
+            "type":"text",
+            "name":"teste1",
+            "label":"Teste 1",
+            "value":"teste 11"
+        },{
+            "type":"select",
+            "name":"teste2",
+            "label":"Teste 2",
+            "options":{
+                "a":"teste1",
+                "b":"teste2"
+            },
+            "placeholder":"Escolha uma opção"
+        },{
+            "type":"checkbox",
+            "name":"teste3",
+            "description":"Teste 3"
+        },{
+            "type":"email",
+            "name":"teste4",
+            "label":"Teste 4",
+            "placeholder":"Email"
+        },{
+            "type":"password",
+            "name":"teste5",
+            "label":"Teste 5",
+            "placeholder":"Senha"
+        }],
+        "buttons": [{
+            "type":"submit",
+            "value":"Salvar"
+        },{
+            "type":"reset",
+            "value":"Limpar"
+        }],
+        "type":"horizontal"
+    }
+}

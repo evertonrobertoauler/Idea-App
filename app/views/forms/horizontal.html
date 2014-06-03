@@ -1,0 +1,17 @@
+<div class="row">
+  <form class="form-horizontal" name="form.form" novalidate ng-submit="form.form.$valid && submit()">
+    <div ng-repeat="field in form.fields" class="form-group">
+      <label class="control-label col-sm-3">
+        {{field.label}}
+      </label>
+      <div class="col-sm-7" ng-include="'/views/forms/fields/' + field.type + '.html'">
+      </div>
+    </div>
+    <div class="form-group" ng-if="form.buttons">
+      <div class="col-sm-offset-3 col-sm-7">
+        <span ng-repeat="button in form.buttons" ng-include="'/views/forms/buttons/' + button.type + '.html'">
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
