@@ -6,6 +6,7 @@ A Angular.js app with a bunch of good ideas
 ## To use this, you need to install Node.js and Yeoman
 
 http://nodejs.org/
+
 http://yeoman.io/
 
 ## To intall the app dependencies
