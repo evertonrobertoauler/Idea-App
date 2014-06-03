@@ -1,6 +1,7 @@
 <select ui-select2 
         style="width:100%" 
         ng-model="field.value" 
+        dynamic-name="field.name"
         data-placeholder="{{ field.placeholder }}">
   <option value=""></option>
   <option ng-repeat="(id, value) in field.options" 

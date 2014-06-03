@@ -11,7 +11,7 @@ angular.module('ideaApp')
       $scope.form = view.form;
 
       $scope.submit = function() {
-        console.log(JSON.stringify($scope.view));
+        console.log(JSON.stringify($scope.form));
       };
     });
   });

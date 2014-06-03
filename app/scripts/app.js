@@ -2,7 +2,7 @@
 
 angular
   .module('ideaApp', [
-    'ngRoute', 'Idea', 'ui.select2'
+    'ngRoute', 'ngLocale', 'Idea', 'ui.select2', 'mgcrea.ngStrap'
   ])
   .config(function($provide, $routeProvider) {
     $provide.factory('$routeProvider', function() {

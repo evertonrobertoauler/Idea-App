@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['<%= yeoman.app %>/views/{,*/}*{,*/}*{,*/}*.html'],
-        tasks: ['newer:jsbeautifier:files'],
+        tasks: [],
         options: {
           livereload: true
         }
@@ -123,7 +123,6 @@ module.exports = function(grunt) {
       files: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
-        '<%= yeoman.app %>/views/{,*/}*.html',
       ],
       options: {
         html: {

@@ -1,6 +1,11 @@
 {
     "navbar": {
         "type":"inverse",
+        "left": [{
+            "widget": "link",
+            "href": "#",
+            "description": "Link Left"
+        }],
         "right": [{
             "widget": "link",
             "href": "#",
@@ -26,6 +31,7 @@
         }]
     },
     "form" : {
+        "title": "Example 1",
         "fields":[{
             "type":"text",
             "name":"teste1",
@@ -54,6 +60,11 @@
             "name":"teste5",
             "label":"Teste 5",
             "placeholder":"Senha"
+        },{
+            "type":"date",
+            "name":"teste6",
+            "label":"Teste 6",
+            "placeholder":"Data"
         }],
         "buttons": [{
             "type":"submit",
