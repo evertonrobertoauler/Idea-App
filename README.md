@@ -9,7 +9,7 @@ http://nodejs.org/
 
 http://yeoman.io/
 
-## To intall the dependencies, run de folowing commands
+## To install the dependencies, run de folowing commands
 
         git clone https://github.com/evertonrobertoauler/Idea-App.git
         cd Idea-App
