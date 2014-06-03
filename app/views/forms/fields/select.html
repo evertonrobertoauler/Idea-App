@@ -1,9 +1,8 @@
-<select ui-select2 
-        style="width:100%" 
-        ng-model="field.value" 
+<select ng-model="field.value" 
+        class="form-control" 
         dynamic-name="field.name"
-        data-placeholder="{{ field.placeholder }}">
-  <option value=""></option>
+        ng-required="field.required">
+  <option value="">{{ field.placeholder }}</option>
   <option ng-repeat="(id, value) in field.options" 
           value="{{ id }}">
     {{value}}

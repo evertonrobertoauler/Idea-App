@@ -35,6 +35,7 @@
         "fields":[{
             "type":"text",
             "name":"teste1",
+            "required": "true",
             "label":"Teste 1",
             "value":"teste 11"
         },{
@@ -48,6 +49,7 @@
             "placeholder":"Escolha uma opção"
         },{
             "type":"checkbox",
+            "required": "true",
             "name":"teste3",
             "description":"Teste 3"
         },{
