@@ -1,7 +1,7 @@
 <select ng-model="field.value" 
         class="form-control" 
         dynamic-name="field.name"
-        ng-required="field.required">
+        validators="field.validators">
   <option value="">{{ field.placeholder }}</option>
   <option ng-repeat="(id, value) in field.options" 
           value="{{ id }}">

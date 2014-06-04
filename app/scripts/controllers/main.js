@@ -13,5 +13,16 @@ angular.module('ideaApp')
       $scope.submit = function() {
         console.log(JSON.stringify($scope.form));
       };
+
+      $scope.reset = function() {
+        ($scope.form.fields || []).forEach(function(field) {
+          field.value = '';
+        });
+      };
+
+      $scope.validate = function() {
+        $scope.form.showErrors = true;
+        return $scope.form.form.$valid;
+      };
     });
   });

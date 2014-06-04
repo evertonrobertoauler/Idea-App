@@ -1,5 +1,7 @@
-<input type="checkbox" 
-       ng-model="field.value"
-       dynamic-name="field.name"
-       ng-required="field.required">
-  {{ field.description }}
+<label class="checkbox-inline">
+  <input type="checkbox" 
+         ng-model="field.value"
+         dynamic-name="field.name"
+         validators="field.validators">
+    {{ field.description }}
+</label>

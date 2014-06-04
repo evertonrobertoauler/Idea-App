@@ -35,28 +35,50 @@
         "fields":[{
             "type":"text",
             "name":"teste1",
-            "required": "true",
             "label":"Teste 1",
-            "value":"teste 11"
+            "value":"teste 11",
+            "validators": [{
+                "type": "required",
+                "description": "Campo é Obrigatório"
+            },{
+                "type": "pattern",
+                "condition": "/^t/",
+                "description": "Campo deve começar com t"
+            },{
+                "type": "minlength",
+                "condition": "5",
+                "description": "Campo deve ter no mínimo 5 caractéres"
+            }]
         },{
-            "type":"select",
+            "type":"select2",
             "name":"teste2",
             "label":"Teste 2",
             "options":{
                 "a":"teste1",
                 "b":"teste2"
             },
-            "placeholder":"Escolha uma opção"
+            "placeholder":"Escolha uma opção",
+            "validators": [{
+                "type": "required",
+                "description": "Campo é Obrigatório"
+            }]
         },{
             "type":"checkbox",
-            "required": "true",
             "name":"teste3",
-            "description":"Teste 3"
+            "description":"Teste 3",
+            "validators": [{
+                "type": "required",
+                "description": "Campo é Obrigatório"
+            }]
         },{
             "type":"email",
             "name":"teste4",
             "label":"Teste 4",
-            "placeholder":"Email"
+            "placeholder":"Email",
+            "validators": [{
+                "type": "required",
+                "description": "Campo é Obrigatório"
+            }]
         },{
             "type":"password",
             "name":"teste5",
