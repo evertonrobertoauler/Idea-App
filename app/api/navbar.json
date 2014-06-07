@@ -1,0 +1,31 @@
+{
+    "type":"inverse",
+    "left": [{
+        "widget": "link",
+        "href": "#",
+        "description": "Link Left"
+    }],
+    "right": [{
+        "widget": "link",
+        "href": "#",
+        "description": "Link"
+    },{
+        "widget": "link",
+        "href": "#",
+        "description": "Link 2"
+    },{
+        "widget": "dropdown",
+        "description": "Dropdown",
+        "widgets": [{
+            "widget": "link",
+            "href": "#",
+            "description": "Link3"
+        },{
+            "widget": "divider"
+        },{
+            "widget": "link",
+            "href": "#",
+            "description": "Link 4"
+        }]
+    }]
+}
