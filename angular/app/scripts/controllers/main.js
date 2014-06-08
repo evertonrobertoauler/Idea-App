@@ -10,7 +10,7 @@ angular.module('ideaApp')
       $scope.navbar = navbar;
     });
 
-    $http.get('/api/form.json').success(function(form) {
+    $http.get('http://127.0.0.1:5000/api/form').success(function(form) {
       $scope.form = form;
     });
 

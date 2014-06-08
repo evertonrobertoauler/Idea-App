@@ -8,6 +8,7 @@
         ng-submit="validate() && submit()">
     <div class="form-group" 
          ng-repeat="field in form.fields"
+         ng-if="field.type"
          ng-class="{'has-error': form.showErrors && form.form[field.name].$invalid}">
       <label class="control-label col-sm-3">
         {{field.label}}
