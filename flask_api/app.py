@@ -18,7 +18,7 @@ def form():
     from flask_api.helpers import model_to_form
     from flask_api.models import Todo
 
-    return jsonify(model_to_form(Todo))
+    return jsonify(model_to_form(Todo, Todo.objects.first()))
 
 
 if __name__ == '__main__':

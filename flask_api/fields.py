@@ -88,4 +88,5 @@ class DateTimeField(Field):
 class HiddenField(Field):
 
     def get_field(self):
+        self.field['value'] = str(self.field['value'])
         return self.field
