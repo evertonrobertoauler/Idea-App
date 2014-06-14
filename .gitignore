@@ -2,5 +2,4 @@
 *bower_components*
 *.tmp/
 *pyc
-.idea
 *__pycache__
