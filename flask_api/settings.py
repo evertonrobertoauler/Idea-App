@@ -1,3 +1,11 @@
 
-MONGODB_SETTINGS = {'DB': 'idea'}
+MONGODB_SETTINGS = {'DB': 'clicker'}
 DEBUG = True
+
+SECRET_KEY = '*2c0k#3d0qmhy)x0k$bp-f95%m$)0i3hs$i^$o)#u==ov3((3+'
+
+SECURITY_PASSWORD_HASH = 'sha256_crypt'
+SECURITY_PASSWORD_SALT = SECRET_KEY
+
+CSRF_ENABLED = False
+CSRF_SESSION_KEY = SECRET_KEY

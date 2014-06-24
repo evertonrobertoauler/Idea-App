@@ -1,0 +1,13 @@
+<fieldset>
+  <legend>{{ field.description }}</legend>
+  <div class="radio" ng-repeat="(id, value) in field.options" >
+    <label>
+      <input type="radio" 
+             ng-model="field.value"
+             dynamic-name="field.name"
+             ng-value="id"
+             validators="field.validators">
+      {{ value }}
+    </label>
+  </div>
+</fieldset>

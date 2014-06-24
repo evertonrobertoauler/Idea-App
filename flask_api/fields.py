@@ -2,7 +2,7 @@
 
 class Field:
 
-    def __init__(self, field, obj):
+    def __init__(self, field, obj=None):
 
         self.form_field = field
 
@@ -30,22 +30,32 @@ class Field:
 class StringField(Field):
 
     def get_field(self):
-
-        self.field['type'] = "text"
+        self.field['type'] = self.form_field.max_length and "text" or "textarea"
 
         if self.form_field.max_length:
+            value = self.form_field.max_length
             self.field['validators'].append({
                 "type": "maxlength",
                 "condition": self.form_field.max_length,
-                "description": "Campo deve ter no máximo %d caractéres" % self.form_field.max_length,
+                "description": "Campo deve ter no máximo %d caractéres" % value,
             })
 
         if self.form_field.min_length:
+            value = self.form_field.max_length
             self.field['validators'].append({
                 "type": "minlength",
                 "condition": self.form_field.min_length,
-                "description": "Campo deve ter no mínimo %d caractéres" % self.form_field.min_length,
+                "description": "Campo deve ter no mínimo %d caractéres" % value,
             })
+
+        return self.field
+
+
+class PasswordField(StringField):
+
+    def get_field(self):
+        super().get_field()
+        self.field['type'] = "password"
 
         return self.field
 
@@ -58,11 +68,10 @@ class EmailField(StringField):
 
         self.field['type'] = "email"
 
-        if self.form_field.max_length:
-            self.field['validators'].append({
-                "type": "email",
-                "description": "E-mail inválido",
-            })
+        self.field['validators'].append({
+            "type": "email",
+            "description": "E-mail inválido",
+        })
 
         return self.field
 

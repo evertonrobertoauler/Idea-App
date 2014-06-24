@@ -197,7 +197,6 @@ module.exports = function(grunt) {
         ignorePath: '<%= yeoman.app %>/'
       }
     },
-
     // Renames files for browser caching purposes
     rev: {
       dist: {
@@ -227,6 +226,26 @@ module.exports = function(grunt) {
             },
             post: {}
           }
+        }
+      }
+    },
+
+    'inline_angular_templates': {
+      dist: {
+        options: {
+          base: 'dist/templates', // (Optional) ID of the <script> tag will be relative to this folder. Default is project dir.
+          prefix: '/', // (Optional) Prefix path to the ID. Default is empty string.
+          selector: 'body', // (Optional) CSS selector of the element to use to insert the templates. Default is `body`.
+          method: 'prepend', // (Optional) DOM insert method. Default is `prepend`.
+          unescape: { // (Optional) List of escaped characters to unescape
+            '&lt;': '<',
+            '&gt;': '>',
+            '&apos;': '\'',
+            '&amp;': '&'
+          }
+        },
+        files: {
+          '<%= yeoman.dist %>/index.html': ['<%= yeoman.dist %>/views/{,*/}*{,*/}*{,*/}*.html']
         }
       }
     },
@@ -280,7 +299,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html', 'views/{,*/}*{,*/}*{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -319,7 +338,7 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
+            'views/{,*/}*{,*/}*{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/*'
           ]
@@ -352,33 +371,6 @@ module.exports = function(grunt) {
         'svgmin'
       ]
     },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
     // Test settings
     karma: {
       unit: {
@@ -431,7 +423,8 @@ module.exports = function(grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'inline_angular_templates'
   ]);
 
   grunt.registerTask('default', [

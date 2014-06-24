@@ -4,11 +4,11 @@ angular
   .module('ideaApp', [
     'ngRoute', 'ngLocale', 'Idea', 'ui.select2'
   ])
-  .config(function($provide, $routeProvider) {
+  .config(function($provide, $routeProvider, $httpProvider) {
+
+    $httpProvider.defaults.withCredentials = true;
+
     $provide.factory('$routeProvider', function() {
       return $routeProvider;
     });
-  })
-  .run(function($routeProvider, ideaResources) {
-    ideaResources($routeProvider, '/api/resources.json');
   });

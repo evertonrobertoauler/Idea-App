@@ -1,31 +1,24 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function($scope) {
-    $scope.title = 'Idea App';
+  .controller('MainCtrl', function($scope, $http, $routeProvider, $idea) {
+    $scope.title = 'Clicker';
+    $scope.url = 'http://127.0.0.1:5000/api/';
+
+    var resource = $idea($routeProvider, $scope, $scope.url);
+
+    $scope.getResources = resource.getResources;
+
+    $scope.getNavbar = resource.getNavbar;
+
+    $scope.getResources();
+    $scope.getNavbar();
   })
-  .controller('IdeaCtrl', function($scope, $http) {
+  .controller('ViewCtrl', function($scope, $http, $location, $ideaResource) {
 
-    $http.get('/api/navbar.json').success(function(navbar) {
-      $scope.navbar = navbar;
-    });
+    $scope.resource = $ideaResource;
 
-    $http.get('http://127.0.0.1:5000/api/form').success(function(form) {
-      $scope.form = form;
-    });
-
-    $scope.submit = function() {
-      console.log(JSON.stringify($scope.form));
-    };
-
-    $scope.reset = function() {
-      ($scope.form.fields || []).forEach(function(field) {
-        field.value = '';
-      });
-    };
-
-    $scope.validate = function() {
-      $scope.form.showErrors = true;
-      return $scope.form.form.$valid;
-    };
+    if ($ideaResource.init) {
+      $ideaResource.init();
+    }
   });

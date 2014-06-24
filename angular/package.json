@@ -30,7 +30,8 @@
     "grunt-karma": "^0.8.3",
     "karma": "^0.12.16",
     "karma-ng-html2js-preprocessor": "^0.1.0",
-    "grunt-jsbeautifier": "^0.2.7"
+    "grunt-jsbeautifier": "^0.2.7",
+    "grunt-inline-angular-templates": "^0.1.5"
   },
   "engines": {
     "node": ">=0.10.0"

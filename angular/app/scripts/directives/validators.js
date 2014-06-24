@@ -26,4 +26,40 @@ angular.module('ideaApp')
         $compile(elem)(scope);
       }
     };
+  })
+  .directive('match', function($parse) {
+
+    var link = function(scope, elem, attrs, ctrl) {
+
+      if (!ctrl || !attrs.match) {
+        return;
+      }
+
+      for (var i in scope.form.fields) {
+        if (scope.form.fields[i].name === attrs.match) {
+          attrs.match = 'form.fields[' + i + '].value';
+        }
+      }
+
+      var field = $parse(attrs.match);
+
+      var validator = function(value) {
+        var temp = field(scope);
+        var v = value === temp;
+        ctrl.$setValidity('match', v);
+        return value;
+      };
+
+      ctrl.$parsers.unshift(validator);
+      ctrl.$formatters.push(validator);
+      scope.$watch(attrs.match, function() {
+        validator(ctrl.$viewValue);
+      });
+    };
+
+    return {
+      link: link,
+      restrict: 'A',
+      require: '?ngModel'
+    };
   });
